@@ -2,7 +2,7 @@
 
 # AutoSaveScene Tool User Manual
 
-AutoSaveScene is a Unity tool that provides automatic scene saving and reminder functionalities.
+AutoSaveScene is a Unity tool that provides automatic backup scene saving and reminder functionalities.
 
 ## Features
 

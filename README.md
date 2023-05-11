@@ -1,3 +1,5 @@
+<img src="https://beeimg.com/images/j01302805902.png" alt="Unity Toolbox Logo" width="400"/>
+
 # AutoSaveScene Tool User Manual
 
 AutoSaveScene is a Unity tool that provides automatic scene saving and reminder functionalities.
@@ -10,6 +12,7 @@ AutoSaveScene is a Unity tool that provides automatic scene saving and reminder 
 - Customizable backup folder
 
 ## Installation
+Download here : [AutoBackupSaver](https://github.com/roundyyy/autobackupsaver/releases)
 
 1. Copy the provided AutoSaveScene script into your Unity project's `Editor` folder. If the folder doesn't exist, create it.
 

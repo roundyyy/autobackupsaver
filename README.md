@@ -1,40 +1,96 @@
 # AutoSaveScene Tool User Manual
 
-AutoSaveScene is a Unity tool that provides automatic backup scene saving and reminder functionalities.
+AutoSaveScene is a Unity Editor tool that provides automatic scene backup functionality with configurable settings and notifications. It helps prevent work loss and maintains a history of scene changes.
 
 ## Features
 
-- Auto-save backup scenes at a specified interval
-- Configurable backup cycle count
-- Reminders to save scenes manually
-- Customizable backup folder
+### Auto-Save Functionality
+- Automatic scene backup at configurable intervals (1-60 minutes)
+- Auto-save before entering Play Mode option
+- Saves only when changes are detected
+- Timestamps in backup file names for better version tracking
+
+### Backup Management
+- Configurable backup cycle count (1-10 backups)
+- Automatic cleanup of old backups
+- Optional backup compression to save disk space
+- Customizable backup folder location
+- Quick access to backup folder
+- Organized backup naming with timestamps
+
+### Save Reminders
+- Configurable reminder intervals (1-60 minutes)
+- Reminder popups to save scene manually
+- Helps maintain good saving habits
+
+### Notifications
+- Toggleable notification system
+- Console messages for backup operations
+- Status updates for:
+  - Successful backups
+  - No changes detected
+  - Unsaved scene warnings
+  - Backup folder operations
+
+### Quality of Life
+- Quick access through keyboard shortcut (Ctrl/Cmd + Alt + S)
+- Manual backup button
+- Direct backup folder access
+- Persistent settings between Unity sessions
+- Tooltip help for all options
 
 ## Installation
-Download here : [AutoBackupSaver](https://github.com/roundyyy/autobackupsaver/releases)
+
+Download here: [AutoBackupSaver](https://github.com/roundyyy/autobackupsaver/releases)
 
 1. Copy the provided AutoSaveScene script into your Unity project's `Editor` folder. If the folder doesn't exist, create it.
+2. The tool will automatically become available in Unity's Tools menu.
 
 ## Usage
 
-1. In the Unity Editor, go to the menu bar and click on `Tools` > `Auto Save Scene` to open the Auto Save Scene settings window.
-2. Configure the auto-save settings:
+1. Access the tool via:
+   - Menu: `Tools > Roundy > Auto Save Scene`
+   - Keyboard shortcut: `Ctrl/Cmd + Alt + S`
 
-    - Enable Auto Save: Toggle the auto-save functionality on or off.
-    - Save Frequency (Minutes): Set the interval (in minutes) for backup scene auto-saving.
-    - Backup Cycle Count: Choose the number of backups to cycle through before overwriting the oldest backup.
+2. Configure Auto-Save Settings:
+   - Enable Auto Save: Activates automatic backup system
+   - Save Frequency: Set interval between backups (1-60 minutes)
+   - Auto-Save Before Play: Automatically creates backup before entering Play Mode
 
-3. Configure the reminder settings:
+3. Configure Backup Settings:
+   - Backup Cycle Count: Number of backup files to maintain (1-10)
+   - Compress Backups: Enable to reduce backup file size
+   - Backup Folder: Choose custom location for backups (default: "BackupScenes" in project root)
 
-    - Enable Reminders: Toggle the reminder functionality on or off.
-    - Remind Frequency (Minutes): Set the interval (in minutes) for showing reminders to save your scene manually.
+4. Configure Reminders (Optional):
+   - Enable Save Reminders: Activates reminder system
+   - Remind Frequency: Set interval between reminders (1-60 minutes)
 
-4. Set the backup folder (optionally):
+5. Notification Settings:
+   - Show Notifications: Toggle console messages and notifications
 
-    - Click the "Select Backup Folder" button to choose a folder for storing scene backups.
-    - Default : BackupScenes in root of Project Files
+6. Quick Actions:
+   - Save Backup Now: Create immediate backup
+   - Open Backup Folder: Quick access to backup location
 
-5. (optionally) Click the "Save Backup Now" button to manually create a backup of the current scene.
+## Backup File Structure
+
+Backup files are named using the following format:
+`SceneName_backupN_YYYYMMDD_HHMMSS.unity`
+- SceneName: Original scene name
+- N: Backup number in cycle
+- YYYYMMDD_HHMMSS: Timestamp of backup
 
 ## Troubleshooting
 
-- If the Auto Save Scene menu item is not visible in the `Tools` menu, make sure the script is in the `Editor` folder.
+- If menu item is not visible: Verify script is in Editor folder
+- If backups aren't creating: Check if scene has unsaved changes
+- If reminders don't show: Verify Unity is not in Play Mode
+- For backup folder access issues: Check write permissions
+
+## Notes
+
+- Scene must be saved at least once before backups can begin
+- Backups are only created when changes are detected
+- Compressed backups are slightly slower but save disk space
+- Settings persist between Unity sessions
